@@ -1,0 +1,65 @@
+package zoho;
+import java.util.*;
+public class test1 {
+
+	public static void main(String[] args) {
+		
+		Scanner in=new Scanner(System.in);
+		String str=in.nextLine();
+		int i=0,j;
+		int max=0;
+		String sub_str="";
+		List<String> li=new LinkedList();
+		while(i<str.length())
+		{
+			if(str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u')
+			{
+				j=i+2;
+				if(j<str.length())
+				{
+					while(j<str.length())
+					{
+						if(str.charAt(j)=='a'||str.charAt(j)=='e'||str.charAt(j)=='i'||str.charAt(j)=='o'||str.charAt(j)=='u')
+						{
+							/*System.out.println(str.substring(i+1,j));
+							if(max<=(str.substring(i+1, j-1)).length())
+							{
+								max=str.substring(i+1, j).length();
+								sub_str=str.substring(i+1, j);
+								//System.out.println(str.substring(i+1,j));
+							}
+							*/
+							li.add(str.substring(i+1,j));
+							i=j;
+							break;
+						}
+						else
+						{
+							j++;
+						}
+					}
+				}
+				else
+				{
+					break;
+				}
+				
+			}
+			else
+			{
+				i++;
+			}
+		}
+		if(li.isEmpty())
+		{
+			System.out.println(str);
+		}
+		else
+		{
+			System.out.println(sub_str);
+		}
+		
+
+	}
+
+}
